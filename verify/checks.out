@@ -1,0 +1,86 @@
+Lemma 3.1: the symmetric sum vanishes once m > (p-1) d^2
+PASS    recursion equals brute force, p=3 d=2 m=5
+PASS    recursion equals brute force, p=5 d=2 m=6
+PASS    recursion equals brute force, p=2 d=2 m=6
+PASS    all tuples of matrix units, p=2 d=1 m=2
+PASS    all tuples of matrix units, p=3 d=1 m=3
+PASS    all tuples of matrix units, p=5 d=1 m=5
+PASS    all tuples of matrix units, p=7 d=1 m=7
+PASS    all tuples of matrix units, p=2 d=2 m=5
+PASS    all tuples of matrix units, p=3 d=2 m=9
+PASS    five random tuples, p=5 d=2 m=17
+PASS    five random tuples, p=3 d=3 m=19
+PASS    Zalesskii, p=2 d=2: zero for all matrix-unit tuples at m=dp=4, nonzero for some at m=3
+PASS    Zalesskii, p=3 d=2: zero for all matrix-unit tuples at m=dp=6, nonzero for some at m=5
+PASS    Zalesskii, p=5 d=2: zero for all matrix-unit tuples at m=dp=10, nonzero for some at m=9
+PASS    Zalesskii, p=2 d=3: zero for all matrix-unit tuples at m=dp=6, nonzero for some at m=5
+PASS    over F_3 with d=2, m=d^2+1=5: nonzero for 18/20 random tuples
+Proposition 6.5: the unordered-frame stabilizer over odd fields
+PASS    p=3 m=3: H_1m = diag(-1,1,...,1,-1)
+PASS    p=3 m=3: H_1m W_(m-1,m) = diag(A_0, P_2)
+PASS    p=3 m=3: det A_0 = -1, so A_0 is not in E_r
+PASS    p=3 m=6: H_1m = diag(-1,1,...,1,-1)
+PASS    p=3 m=6: H_1m W_(m-1,m) = diag(A_0, P_2)
+PASS    p=3 m=6: det A_0 = -1, so A_0 is not in E_r
+PASS    p=5 m=3: H_1m = diag(-1,1,...,1,-1)
+PASS    p=5 m=3: H_1m W_(m-1,m) = diag(A_0, P_2)
+PASS    p=5 m=3: det A_0 = -1, so A_0 is not in E_r
+PASS    p=5 m=6: H_1m = diag(-1,1,...,1,-1)
+PASS    p=5 m=6: H_1m W_(m-1,m) = diag(A_0, P_2)
+PASS    p=5 m=6: det A_0 = -1, so A_0 is not in E_r
+PASS    p=7 m=3: H_1m = diag(-1,1,...,1,-1)
+PASS    p=7 m=3: H_1m W_(m-1,m) = diag(A_0, P_2)
+PASS    p=7 m=3: det A_0 = -1, so A_0 is not in E_r
+PASS    p=7 m=6: H_1m = diag(-1,1,...,1,-1)
+PASS    p=7 m=6: H_1m W_(m-1,m) = diag(A_0, P_2)
+PASS    p=7 m=6: det A_0 = -1, so A_0 is not in E_r
+Theorem 6.8, face comparison: W = W_(m,m-1) fixes the complementary block
+PASS    p=3: W e_(m-1) = e_m
+PASS    p=3: W e_m = -e_(m-1)
+PASS    p=3: W commutes with diag(A, 1_2) for 20 random A
+PASS    p=5: W e_(m-1) = e_m
+PASS    p=5: W e_m = -e_(m-1)
+PASS    p=5: W commutes with diag(A, 1_2) for 20 random A
+PASS    p=7: W e_(m-1) = e_m
+PASS    p=7: W e_m = -e_(m-1)
+PASS    p=7: W commutes with diag(A, 1_2) for 20 random A
+PASS    p=11: W e_(m-1) = e_m
+PASS    p=11: W e_m = -e_(m-1)
+PASS    p=11: W commutes with diag(A, 1_2) for 20 random A
+Section 7: coordinate changes and the triangularization of C_b
+PASS    p=3: x_ab(1)x_ba(1)x_ab(1) has matrix [[2,3],[1,2]] mod p, not a transposition
+PASS    p=3: w_bc^2 w_ab w_bc is the unsigned 3-cycle e_a->e_b->e_c->e_a
+PASS    p=5: x_ab(1)x_ba(1)x_ab(1) has matrix [[2,3],[1,2]] mod p, not a transposition
+PASS    p=5: w_bc^2 w_ab w_bc is the unsigned 3-cycle e_a->e_b->e_c->e_a
+PASS    p=3: W_12(v) W_12(1)^-1 = diag(v, v^-1) for every unit v (Lemma 7.4)
+PASS    p=5: W_12(v) W_12(1)^-1 = diag(v, v^-1) for every unit v (Lemma 7.4)
+PASS    p=7: W_12(v) W_12(1)^-1 = diag(v, v^-1) for every unit v (Lemma 7.4)
+PASS    p=3: the relabelling matrix with sign on c has determinant one, all of S_4 (Lemma 7.5)
+PASS    p=5: the relabelling matrix with sign on c has determinant one, all of S_4 (Lemma 7.5)
+PASS    p=3 b=3: (C_b - 1)^b = 0
+PASS    p=3 b=3: P^-1 C_b P is upper unitriangular
+PASS    p=3 b=3: Q = cP has det 1 and Q^-1 C_b Q = P^-1 C_b P
+PASS    p=3 b=9: (C_b - 1)^b = 0
+PASS    p=3 b=9: P^-1 C_b P is upper unitriangular
+PASS    p=3 b=9: Q = cP has det 1 and Q^-1 C_b Q = P^-1 C_b P
+PASS    p=5 b=5: (C_b - 1)^b = 0
+PASS    p=5 b=5: P^-1 C_b P is upper unitriangular
+PASS    p=5 b=5: Q = cP has det 1 and Q^-1 C_b Q = P^-1 C_b P
+PASS    p=7 b=7: (C_b - 1)^b = 0
+PASS    p=7 b=7: P^-1 C_b P is upper unitriangular
+PASS    p=7 b=7: Q = cP has det 1 and Q^-1 C_b Q = P^-1 C_b P
+Lemma 8.6: v_p(2^n+1) <= C + v_p(n), and the parts of L_0...L_d prime to p are unbounded
+PASS    p=3: v_p(2^n+1) <= 1 + v_p(n) for n < 2000
+PASS    p=5: v_p(2^n+1) <= 1 + v_p(n) for n < 2000
+PASS    p=11: v_p(2^n+1) <= 1 + v_p(n) for n < 2000
+PASS    p=13: v_p(2^n+1) <= 1 + v_p(n) for n < 2000
+PASS    p=17: v_p(2^n+1) <= 1 + v_p(n) for n < 2000
+PASS    p=19: v_p(2^n+1) <= 1 + v_p(n) for n < 2000
+PASS    p=29: v_p(2^n+1) <= 1 + v_p(n) for n < 2000
+PASS    p=41: v_p(2^n+1) <= 1 + v_p(n) for n < 2000
+PASS    p=3 h0=4 D=2: p divides every L_j, and the prime-to-p parts have bit lengths [4, 8, 24, 53, 117]
+PASS    p=3 h0=6 D=4: p divides every L_j, and the prime-to-p parts have bit lengths [6, 29, 125, 508, 2044]
+PASS    p=5 h0=1 D=5: p divides every L_j, and the prime-to-p parts have bit lengths [1, 4, 28, 152, 775]
+PASS    p=11 h0=4 D=11: p divides every L_j, and the prime-to-p parts have bit lengths [2, 44, 525, 5847, 64408]
+PASS    p=13 h0=5 D=13: p divides every L_j, and the prime-to-p parts have bit lengths [3, 65, 907, 11890, 154692]
+All checks passed.

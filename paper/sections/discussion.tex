@@ -1,0 +1,101 @@
+%======================================================================
+\section{Discussion and questions}\label{sec:discussion}
+
+\paragraph{One presentation for every prime.} The algebra of Theorem~A and the groups of Theorem~B come from one
+presentation, fixed before the prime. The only place where the prime enters the construction is detection. There,
+central elements are separated in finite quotients using long-word phases modulo integers coprime to $p$. The phases
+of the hierarchy live modulo products of the encoding lengths $L_j=2^{h_j+1}+1$, and these products may share factors
+with $p$. Reducing the phases modulo the part prime to $p$, which is unbounded (Section~\ref{sec:detection}), removes
+this dependence. For example, an odd prime divides some $2^m+1$ only if the multiplicative order of $2$ modulo $p$ is
+even, so primes such as $7$, $23$, $31$ and $47$ never divide any encoding length.
+
+\paragraph{Exponents.} The groups $G_p$ have unbounded exponent, since a finitely generated residually finite group of
+exponent dividing $p^a$ is finite by Zel'manov's theorems~\cite{ZelmanovOdd,ZelmanovTwo}. Whether an infinite
+finitely presented group can have finite exponent remains open, and residual finiteness rules out the present method
+for that question.
+
+\paragraph{Characteristic zero.} Theorem~C shows that presentations by unsigned word relations, which carry the
+positive-characteristic construction, can never give a nil algebra that is not nilpotent in characteristic zero. One
+might hope to replace the symmetric sum of Lemma~\ref{lem:symmetric} by an alternating one, using letters that
+anticommute. This does not work as stated. Exchanging two whole chunks of lengths $r$ and $s$ then contributes the sign
+$(-1)^{rs}$, so chunks of even length still commute and the orbit sums do not become alternating. A characteristic-zero
+analogue would need a genuinely different cancellation identity, valid for chunks of arbitrary length, together with an
+invariant that keeps arbitrarily long words nonzero.
+
+\paragraph{Questions.}
+\begin{enumerate}[label=(\arabic*),leftmargin=*]
+\item Is there a finitely presented nil algebra over $\Q$ that is not nilpotent? By Theorem~C its relations must involve
+  signs or coefficients.
+\item The rank $12$ is inherited from the stability range of the argument and is not optimized. What is the least $n$
+  for which $\St_n(R_p)$ has the properties of Theorem~B?
+\end{enumerate}
+
+%======================================================================
+\section{How this work was done}\label{sec:methods}
+
+\paragraph{Roles.} This paper is the work of its two authors together with AI models from more than one developer.
+\begin{itemize}[leftmargin=*]
+\item The authors set the direction throughout: they selected the problem from a review of OpenAI's release, fixed the
+  scope (every prime, with characteristic zero treated separately), set the verification protocol, decided which lines to
+  pursue and which to drop, and take full responsibility for every claim.
+\item The models did most of the exploration, derivation, computation and drafting. In particular they found:
+  \begin{itemize}
+  \item a cancellation bound in characteristic $p$, later found to be a weaker form of Zalesskii's
+    theorem~\cite{Zalesskii1985};
+  \item the failure of the unordered-frame argument and its ordered-frame replacement;
+  \item the sign-corrected group calculations;
+  \item the treatment of phases for odd primes;
+  \item Theorem~C.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Verification.} The extension was worked out in three independent lanes, each with three rounds, and a separate
+coordinating instance re-derived the repairs on which the argument rests.
+\begin{itemize}[leftmargin=*]
+\item \emph{The lanes.} One lane covered the hierarchy, cancellation and phases, and one covered the group-theoretic
+  steps. The third was a refutation-first adversary, run by a model from a different developer, which tried to break
+  every step and then audited the proofs line by line.
+\item \emph{What verification found.} It established that the direct port of the unordered-frame stability argument
+  fails over odd fields (Proposition~\ref{prop:unordered-fails}), which led to the ordered-frame replacement.
+\item \emph{Exact computation.} Finite identities were checked exactly, in integer arithmetic modulo $p$:
+  \begin{itemize}
+  \item the symmetric-sum bound of Lemma~\ref{lem:symmetric}, and Zalesskii's degree $dp$, exhaustively on tuples of
+    matrix units for small $p$ and $d$;
+  \item the matrices of Proposition~\ref{prop:unordered-fails} and of the face comparison in
+    Theorem~\ref{thm:stability};
+  \item the coordinate changes of Section~\ref{sec:torsion};
+  \item the valuation bound of Lemma~\ref{lem:det-pprime}.
+  \end{itemize}
+  The script, \texttt{verify/checks.py}, is part of the release.
+\item \emph{A blind check.} The four load-bearing steps were then checked independently by a model from another developer
+  that had not seen our proofs:
+  \begin{itemize}
+  \item the characteristic-$p$ cancellation and its propagation;
+  \item the ordered-frame stability argument;
+  \item the ordinary finite presentation with $p$-power root relations;
+  \item the detection of central elements.
+  \end{itemize}
+  It accepted all four, and confirmed by exact computation that the characteristic-two bound of
+  \cite[Lemma~3.2]{OAI247periodic} fails over $\F_3$, as Zalesskii's theorem predicts, so a bound depending on $p$ is needed. It
+  independently flagged two characteristic-two steps in the imported inputs:
+  \begin{itemize}
+  \item the permutation lemma~\cite[Lemma~3.3]{OAI247rf};
+  \item the swaps in the finite-rank inputs of~\cite[Section~5]{OAI247periodic}.
+  \end{itemize}
+  Both are replaced in Sections~\ref{sec:stability}--\ref{sec:detection}. It also observed that reducing the phases to
+  moduli prime to $p$ removes the need for prime-dependent parameters, which we adopt. It judged Theorem~C correct and
+  elementary.
+\end{itemize}
+The OpenAI manuscripts were read at a fixed commit of their public repository. OpenAI's Lean development formalizes the
+characteristic-two periodic group of~\cite{OAI247periodic} and nothing in the present paper. No argument here has been
+formally verified; the proofs are given in full, and the checks support them but do not replace them. The
+inputs~\cite{OAI247periodic,OAI247rf} were produced by an OpenAI model, as OpenAI states, and have not been refereed.
+
+\paragraph{Priority search.} On 15 October 2026 we searched arXiv, reading math.GR and math.RA newest first and running
+full-text queries on finitely presented periodic groups, torsion groups and $p$-groups, nil algebras and Steinberg groups.
+We also searched OpenAI's public repository and the general web. We found no infinite finitely presented periodic group,
+and no infinite finitely presented residually finite $p$-group, for any odd prime $p$. The nearest recent work is
+Ivanov's extension to every odd prime of another construction from the same release, the torsion-free group whose
+group algebra over $\F_2$ has zero divisors~\cite{Ivanov2026}. It also replaces a characteristic-two cancellation by a
+signed one, but it concerns group algebras and is independent of the present paper. For Theorem~C we found no explicit
+statement in the literature on semigroup algebras, and, as said after its proof, we do not claim it as new.

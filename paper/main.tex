@@ -1,0 +1,193 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Finitely presented infinite p-groups for every prime},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
+
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{theoremA}{Theorem A}
+\newtheorem*{theoremB}{Theorem B}
+\newtheorem*{theoremC}{Theorem C}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\DeclareMathOperator{\St}{St}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+
+\title{Finitely presented infinite $p$-groups for every prime}
+\author{Seth Douglas \and Nidhal Mghirbi}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For every prime $p$ we construct an infinite, residually finite group with an ordinary finite presentation in which every
+element has finite $p$-power order. For $p=2$ this is a recent construction of OpenAI, which also answered the finitely
+presented Burnside question. We extend it to every prime, using a single finite presentation written over the
+integers. Over every field of positive characteristic this presentation defines a finitely presented,
+infinite-dimensional, nil, Jacobson radical algebra that is not nilpotent and whose matrix algebras are all nil.
+Reducing it modulo $p$ gives a graded $\F_p$-algebra $R_p$, and the groups are finite-index subgroups of the Steinberg
+groups $\St_{12}(R_p)$. The
+extension is not a relabelling of $2$ by $p$. The characteristic-two cancellation bound must be replaced by one that depends on
+$p$. The unordered-frame homological stability argument fails over odd fields and is replaced
+by an ordered-frame argument with signed transpositions. The phases that detect central elements must be taken modulo
+integers coprime to $p$. Finally, we show that characteristic zero is genuinely different: over a field of characteristic zero, an algebra
+presented by finitely many word equalities and word zeros is nil only if it is nilpotent. A characteristic-zero analogue
+therefore needs relations with signs or coefficients.
+\end{abstract}
+
+\noindent\emph{The mathematics in this paper was developed with AI assistance; Section~\ref{sec:methods} describes how,
+and the authors take responsibility for every claim.}
+
+\setcounter{tocdepth}{1}
+{\small\tableofcontents}
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+
+A group is \emph{periodic} if each of its elements has finite order, and a \emph{$p$-group} (in the infinite sense used
+here) if each element has finite $p$-power order. Burnside asked in 1902 whether periodic groups with finitely many
+generators must be finite~\cite{Burnside1902}. Golod's nil algebras gave infinite finitely generated residually finite
+$p$-groups for every prime~\cite{Golod1964,GolodShafarevich1964}, and Novikov and Adian gave infinite finitely generated
+groups of bounded exponent~\cite{NovikovAdian1968}. A stronger requirement remained open: an \emph{ordinary finite
+presentation}, meaning finitely many generators and finitely many relator words. Whether an infinite periodic group can
+have one is recorded as an open question by Ol'shanskii and Sapir~\cite[p.~45]{OlshanskiiSapir2003}, and again by
+Haettel and Osajda~\cite[Section~2.2(IX)]{HaettelOsajda2025}.
+
+OpenAI recently answered this question~\cite{OAI247periodic}. They constructed a finitely presented graded algebra
+$R=\F_2\oplus I$ over $\F_2$ in which every matrix with entries in $I$ is nilpotent, and showed that the Steinberg group
+$\St_{12}(R)$ is infinite, finitely presented and periodic. A companion paper~\cite{OAI247rf} proved that $\St_{12}(R)$
+is residually finite. The kernel of its reduction to $\St_{12}(\F_2)$ is then an infinite, finitely presented,
+residually finite $2$-group. Both constructions are written in characteristic two. The finitely presented algebra
+of~\cite{OAI247periodic} also answers, over $\F_2$, Ufnarovskij's question whether a finitely presented nil algebra must
+be nilpotent~\cite[Question~8.1]{Smoktunowicz2008}, together with the finite-presentation versions of Amitsur's radical
+question and Kurosh's algebraic question.
+
+We extend these results to every prime, and we explain why characteristic zero lies outside the method.
+
+\begin{theoremA}[Nil algebras in every positive characteristic]
+There is a finite alphabet $\Sigma$ and a finite set of relations, each of the form $u=v$ with $u,v$ nonempty words of the
+same length or $w=0$ with $w$ a nonempty word, such that the following holds for every field $K$ of positive
+characteristic. Let $I_K$ be the nonunital $K$-algebra with this presentation. Then $I_K$ is finitely presented,
+infinite-dimensional and not nilpotent, and for every $l\geq1$ every matrix in $M_l(I_K)$ is nilpotent. Consequently
+$I_K$ is Jacobson radical, and its unitization $K\oplus I_K$ is a finitely presented, algebraic, infinite-dimensional
+unital $K$-algebra.
+\end{theoremA}
+
+The presentation is fixed once, independently of $K$. For $K=\F_2$ the statement is~\cite{OAI247periodic}.
+
+\begin{theoremB}[Finitely presented $p$-groups for every prime]
+Let $p$ be a prime, and let $R_p=\F_p\oplus I_{\F_p}$ be the unitization of the algebra of Theorem~A over $\F_p$. Then:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\Gamma_p=\St_{12}(R_p)$ is infinite, ordinarily finitely presented, periodic and residually finite; and
+\item $G_p=\ker\bigl(\Gamma_p\to\St_{12}(\F_p)\bigr)$ is an infinite, ordinarily finitely presented, residually finite
+group in which every element has finite $p$-power order.
+\end{enumerate}
+\end{theoremB}
+
+For $p=2$ this is~\cite{OAI247periodic,OAI247rf}. One fixed presentation thus gives the groups for every prime at once.
+Two consequences follow from known results.
+\begin{itemize}[leftmargin=*]
+\item By Ershov and Jaikin-Zapirain~\cite[Theorem~6.2]{ErshovJaikinZapirain2010}, $\St_n(S)$ has Kazhdan's property~(T)
+  for every finitely generated unital ring $S$ and $n\geq3$. So $\Gamma_p$ has property~(T), and so does its
+  finite-index subgroup $G_p$. This is the odd-prime analogue of~\cite[Corollary~1.2]{OAI247periodic}.
+\item The element orders of $G_p$ are unbounded. By Zel'manov's solution of the restricted Burnside
+  problem~\cite{ZelmanovOdd,ZelmanovTwo}, a finitely generated residually finite group of exponent dividing $p^a$ is
+  finite.
+\end{itemize}
+
+\begin{theoremC}[Characteristic zero needs signs]
+Let $K$ be a field of characteristic zero, and let $A$ be a nonunital $K$-algebra generated by finitely many letters
+subject only to relations $u=v$ and $w=0$, where $u,v,w$ are nonempty words. If $A$ is nil, then $A$ is nilpotent. In
+particular, over every field of characteristic zero the presentation of Theorem~A defines an infinite-dimensional
+algebra that is not nil.
+\end{theoremC}
+
+Theorem~C is elementary, and we do not present it as new (Section~\ref{sec:charzero}). We include it because it locates
+the positive-characteristic mechanism precisely. The sum $x$ of the generators has $x^n$ equal to the sum of all words of length $n$. Its coefficient
+on each surviving word class is a positive integer, which cannot vanish in characteristic zero. So $x^N=0$ forces every
+word of length $N$ to vanish. Theorem~C shows exactly where the positive-characteristic mechanism lives: multiplicities
+that are positive integers can vanish modulo $p$, never over $\Q$. A characteristic-zero finitely presented nil algebra
+that is not nilpotent, if one exists, needs relations with signs or coefficients. Whether one exists remains open.
+
+\paragraph{Why odd primes are not a relabelling.} Three steps of the characteristic-two argument do not survive the
+change of field as written, and a fourth needs new parameters.
+\begin{enumerate}[leftmargin=*]
+\item \emph{Cancellation.} In characteristic two the symmetric sum $\sum_{\sigma\in S_m}X_{\sigma(1)}\cdots
+  X_{\sigma(m)}$ of $d\times d$ matrices vanishes once $m>d^2$~\cite{OAI247periodic}. In characteristic $p$ this bound is false for small
+  $d$, and the bound must depend on $p$. By a theorem of Zalesskii the sum vanishes once $m\geq dp$~\cite{Zalesskii1985}.
+  We use the cruder bound $m>(p-1)d^2$, which has a two-line proof: some basis matrix then repeats at least $p$ times
+  and contributes a factorial divisible by $p$. No signs are needed. The hierarchy absorbs the factor $p-1$ at a finite level (Section~\ref{sec:algebra}).
+\item \emph{Homological stability.} The rational, unordered-frame stability argument of~\cite{OAI247periodic} relies on
+  frame transpositions being elementary. Over an odd field this fails: we give an explicit stabilizer element whose
+  projection is not elementary (Proposition~\ref{prop:unordered-fails}). We replace it with an integral ordered-frame
+  argument built on the universal central extension of pointwise frame stabilizers, following~\cite{OAI247rf}. The key
+  face-map comparison uses a \emph{signed} transposition that fixes the complementary block exactly
+  (Section~\ref{sec:stability}).
+\item \emph{Signs throughout the group calculations.} Row interchanges become signed transpositions. Diagonal units and
+  permutations of used coordinates are corrected by a compensating sign on an unused coordinate. Torsion of reverse
+  commutators uses the identity $H^p=[x^p,y]$ rather than an involution (Sections~\ref{sec:fp}--\ref{sec:torsion}).
+\item \emph{Phases and permutations.} Detecting central elements in finite quotients uses long-word phases modulo
+  integers coprime to the characteristic. In characteristic two the odd encoding lengths $L_j=2\cdot2^{h_j}+1$ serve
+  directly. For odd $p$ we reduce the phases modulo the part of $L_0\cdots L_d$ prime to $p$. By the lifting-the-exponent
+  lemma this is unbounded as $d\to\infty$, so one presentation serves every prime. The characteristic-two lemma that every
+  coordinate permutation is induced on roots by conjugation~\cite[Lemma~3.3]{OAI247rf} is false for odd $p$. We replace
+  it by signed transpositions with a compensating sign on an unused coordinate (Sections~\ref{sec:torsion}
+  and~\ref{sec:detection}).
+\end{enumerate}
+
+\paragraph{What is due to whom.} The construction and the principal methods are OpenAI's~\cite{OAI247periodic,OAI247rf}:
+\begin{itemize}[leftmargin=*]
+\item the finite rule hierarchy and its fixed-point program;
+\item matrix-weighted cancellation through cuts, tokens and weighted automata;
+\item the coefficient extraction that proves matrix nilness;
+\item the finite presentation of Steinberg groups (after Krsti\'c and McCool~\cite{KrsticMcCool});
+\item root strips, centrality and stability;
+\item the cyclic and truncated shift substitutions;
+\item the long-word phases and the detection argument.
+\end{itemize}
+Their hierarchy is characteristic-free, and we use it unchanged. What is new here:
+\begin{itemize}[leftmargin=*]
+\item the extension to every prime, and the observation that one integral presentation serves every positive
+  characteristic;
+\item the failure of the unordered-frame port and its ordered-frame replacement with an exact signed face map;
+\item the sign-corrected group calculations;
+\item the reduction of phases to moduli prime to $p$, giving one presentation for every prime;
+\item Theorem~C, which is elementary and included for completeness.
+\end{itemize}
+
+\paragraph{Organization.}
+\begin{itemize}[leftmargin=*]
+\item Section~\ref{sec:prelim}: word algebras and the inputs we import.
+\item Section~\ref{sec:algebra}: Theorem~A.
+\item Section~\ref{sec:charzero}: Theorem~C.
+\item Sections~\ref{sec:fp}--\ref{sec:detection}: Theorem~B (finite presentation over $\F_p$, centrality and stability,
+  relative $p$-primary torsion, then phases and detection).
+\item Section~\ref{sec:discussion}: questions.
+\item Section~\ref{sec:methods}: how the work was done and verified.
+\end{itemize}
+
+\input{sections/algebra}
+
+\input{sections/groups}
+
+\input{sections/discussion}
+
+\input{references}
+\end{document}

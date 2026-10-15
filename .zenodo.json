@@ -1,0 +1,41 @@
+{
+  "title": "Finitely presented infinite p-groups for every prime",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "version": "1.0.0",
+  "creators": [
+    {
+      "name": "Douglas, Seth"
+    },
+    {
+      "name": "Mghirbi, Nidhal"
+    }
+  ],
+  "description": "<p>For every prime p we construct an infinite, residually finite group with an ordinary finite presentation in which every element has finite p-power order. For p = 2 this is a recent construction of OpenAI, which also answered the finitely presented Burnside question. We extend it to every prime, using a single finite presentation written over the integers. Over every field of positive characteristic this presentation defines a finitely presented, infinite-dimensional, nil, Jacobson radical algebra that is not nilpotent and whose matrix algebras are all nil. Reducing it modulo p gives a graded F_p-algebra R_p, and the groups are finite-index subgroups of the Steinberg groups St_12(R_p). The extension is not a relabelling of 2 by p. The characteristic-two cancellation bound must be replaced by one that depends on p. The unordered-frame homological stability argument fails over odd fields and is replaced by an ordered-frame argument with signed transpositions. The phases that detect central elements must be taken modulo integers coprime to p. Finally, we show that characteristic zero is genuinely different: over a field of characteristic zero, an algebra presented by finitely many word equalities and word zeros is nil only if it is nilpotent. A characteristic-zero analogue therefore needs relations with signs or coefficients.</p>",
+  "keywords": [
+    "Burnside problem",
+    "finitely presented groups",
+    "periodic groups",
+    "residually finite p-groups",
+    "nil algebras",
+    "Kurosh problem",
+    "Steinberg groups",
+    "homological stability"
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "notes": "The paper and documentation are licensed CC BY 4.0 and the script MIT or Apache 2.0, at the user's option (see RIGHTS.md and NOTICE). The construction and the principal methods are OpenAI's; the paper says step by step which arguments hold over F_p as written and which are replaced, and Section 10 says how the work was done. This is a preprint, not a claim of journal peer review.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/openai/math/blob/main/preprints/An-infinite-finitely-presented-periodic-group-September-23-2026/paper.pdf",
+      "relation": "references",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://github.com/openai/math/blob/main/preprints/An-infinite-finitely-presented-residually-finite-2-group-October-5-2026/residually-finite-torsion.pdf",
+      "relation": "references",
+      "resource_type": "publication-preprint"
+    }
+  ]
+}

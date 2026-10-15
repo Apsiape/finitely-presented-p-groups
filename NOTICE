@@ -1,0 +1,11 @@
+Finitely presented infinite p-groups for every prime
+Copyright 2026 Seth Douglas and Nidhal Mghirbi
+
+The paper builds on two preprints of OpenAI's mathematics release, https://github.com/openai/math:
+"An infinite finitely presented periodic group" (23 September 2026) and "An infinite finitely presented
+residually finite 2-group" (5 October 2026). The construction and the principal methods are OpenAI's work; the
+paper says, step by step, which arguments hold as written over F_p and which are replaced, and gives an account
+of credit in its introduction and in Section 10.
+
+No OpenAI source text, code or Lean file is redistributed in this repository. OpenAI's material is referenced by
+commit and must be obtained from the repository above, under its own terms.

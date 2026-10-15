@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "Please cite the paper; this repository supplies its LaTeX source and its verification script."
+type: software
+title: "Finitely presented infinite p-groups for every prime"
+version: 1.0.0
+license:
+  - CC-BY-4.0
+  - MIT
+  - Apache-2.0
+authors:
+  - family-names: Douglas
+    given-names: Seth
+  - family-names: Mghirbi
+    given-names: Nidhal
+repository-code: "https://github.com/Apsiape/finitely-presented-p-groups"
+keywords:
+  - Burnside problem
+  - finitely presented groups
+  - periodic groups
+  - residually finite p-groups
+  - nil algebras
+  - Kurosh problem
+  - Steinberg groups
+  - homological stability
+references:
+  - type: generic
+    authors:
+      - name: OpenAI
+    title: "An infinite finitely presented periodic group"
+    year: 2026
+    url: "https://github.com/openai/math/blob/main/preprints/An-infinite-finitely-presented-periodic-group-September-23-2026/paper.pdf"
+    notes: "OpenAI Math Release preprint, 23 September 2026. The construction and the characteristic-two theorems are OpenAI's."
+  - type: generic
+    authors:
+      - name: OpenAI
+    title: "An infinite finitely presented residually finite 2-group"
+    year: 2026
+    url: "https://github.com/openai/math/blob/main/preprints/An-infinite-finitely-presented-residually-finite-2-group-October-5-2026/residually-finite-torsion.pdf"
+    notes: "OpenAI Math Release preprint, 5 October 2026. The integral stability argument, the shift substitutions, the phases and the detection argument are OpenAI's."
+preferred-citation:
+  type: generic
+  title: "Finitely presented infinite p-groups for every prime"
+  authors:
+    - family-names: Douglas
+      given-names: Seth
+    - family-names: Mghirbi
+      given-names: Nidhal
+  year: 2026
+  version: 1.0.0
+  notes: "Preprint. The paper is licensed CC BY 4.0 and the script MIT or Apache 2.0; see RIGHTS.md."
