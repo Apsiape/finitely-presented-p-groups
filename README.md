@@ -4,7 +4,7 @@ Seth Douglas and Nidhal Mghirbi
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23401290.svg)](https://doi.org/10.5281/zenodo.23401290)
 
-Version 1.0.0: [doi:10.5281/zenodo.23401291](https://doi.org/10.5281/zenodo.23401291). All versions: [doi:10.5281/zenodo.23401290](https://doi.org/10.5281/zenodo.23401290).
+Version 1.0.1: [doi:10.5281/zenodo.23791059](https://doi.org/10.5281/zenodo.23791059). Version 1.0.0: [doi:10.5281/zenodo.23401291](https://doi.org/10.5281/zenodo.23401291). All versions: [doi:10.5281/zenodo.23401290](https://doi.org/10.5281/zenodo.23401290).
 
 For every prime p there is an infinite, residually finite group with an ordinary finite presentation in which
 every element has finite p-power order. For p = 2 this is a recent construction of OpenAI, which also answered the
