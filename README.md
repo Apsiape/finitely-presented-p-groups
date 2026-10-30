@@ -70,7 +70,10 @@ The construction and the principal methods are OpenAI's ("An infinite finitely p
 [openai/math](https://github.com/openai/math)): the finite rule hierarchy, the matrix-weighted cancellation, the
 coefficient extraction, the finite presentation of Steinberg groups, root strips, centrality and stability, the
 shift substitutions, and the long-word phases and detection. What is new here is the extension to every prime and
-the repairs it needs. Section 10 of the paper says how the work was done and verified, including the use of AI
+the repairs it needs. Version 1.0.1 adds a note: independent concurrent work by Kenta Kitamura
+([KitaKen1/all-prime-residually-finite-p-groups](https://github.com/KitaKen1/all-prime-residually-finite-p-groups); manuscript
+13 October 2026, Lean formalization 16 October 2026) also proves the every-prime result; the extension to every prime is shared
+with it. Section 10 of the paper says how the work was done and verified, including the use of AI
 models.
 
 ## License

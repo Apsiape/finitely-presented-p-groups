@@ -2,10 +2,11 @@
   "title": "Finitely presented infinite p-groups for every prime",
   "upload_type": "publication",
   "publication_type": "preprint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "creators": [
     {
-      "name": "Douglas, Seth"
+      "name": "Douglas, Seth",
+      "orcid": "0009-0007-4708-3252"
     },
     {
       "name": "Mghirbi, Nidhal"
